@@ -18,7 +18,7 @@ public class MainWindow extends JFrame{
         mainWindowEncryptionForm = new EncryptionForm();
 
         /// setting properties ////
-        setMaximumSize(new Dimension(500, 500));
+        setResizable(false);
         setMinimumSize(new Dimension(500, 500));
         setVisible(true);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
