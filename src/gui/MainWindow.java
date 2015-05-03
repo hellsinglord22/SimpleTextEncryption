@@ -40,8 +40,7 @@ public class MainWindow extends JFrame{
         setVisible(true);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setJMenuBar(createMenuBar());
-
-
+        setComponentPosition();
 
     }
 
@@ -50,7 +49,7 @@ public class MainWindow extends JFrame{
 
     }
     private void setComponentPosition() {
-
+        mainWindowContainer.add(mainWindowEncryptionForm, BorderLayout.CENTER);
     }
     private JMenuBar createMenuBar() {
         JMenuBar menuBar = new JMenuBar();
