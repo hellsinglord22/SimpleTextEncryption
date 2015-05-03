@@ -110,7 +110,7 @@ public class EncryptionForm extends JPanel{
             @Override
             public void actionPerformed(ActionEvent e) {
                 if (myFileChooser.showOpenDialog(EncryptionForm.this) == JFileChooser.APPROVE_OPTION) {
-                    String path = myFileChooser.getSelectedFile().toString();2
+                    String path = myFileChooser.getSelectedFile().toString();
                     inputPathTextField.setText(path);
                 }
             }
