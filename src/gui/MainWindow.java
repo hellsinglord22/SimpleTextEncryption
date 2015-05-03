@@ -16,6 +16,18 @@ public class MainWindow extends JFrame{
     public MainWindow(String text) {
         super(text);
 
+        // Add looks and feels //
+        try {
+            for (UIManager.LookAndFeelInfo info : UIManager.getInstalledLookAndFeels()) {
+                if ("Nimbus".equals(info.getName())) {
+                    UIManager.setLookAndFeel(info.getClassName());
+                    break;
+                }
+            }
+        } catch (Exception e) {
+            System.out.println("couldn't load the looks and feels");
+        }
+
         /// initialize attributes ///
         mainWindowContainer = getContentPane();
         mainWindowEncryptionForm = new EncryptionForm();
