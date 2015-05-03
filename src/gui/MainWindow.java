@@ -12,6 +12,7 @@ public class MainWindow extends JFrame{
     private JFileChooser mainWindowFileChooser;
 
 
+
     /// Constructor(s) ///
     public MainWindow(String text) {
         super(text);
@@ -45,10 +46,10 @@ public class MainWindow extends JFrame{
     }
 
     /// Methods(s) ////
-    private void setAttributesBehaviour () {
+    private void setComponentBehaviour() {
 
     }
-    private void setAttributesPositions() {
+    private void setComponentPosition() {
 
     }
     private JMenuBar createMenuBar() {
