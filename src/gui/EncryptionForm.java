@@ -5,6 +5,8 @@ import sun.nio.cs.ext.EUC_CN;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class EncryptionForm extends JPanel{
     /// Attributes ///
@@ -12,6 +14,7 @@ public class EncryptionForm extends JPanel{
     private JLabel keyLabel , inputPathLabel , outputPathLabel;
     private JTextField keyTextField , inputPathTextField , outputPathTextField;
     private GridBagConstraints myGridBagConstraints;
+    private JFileChooser myFileChooser;
 
     /// Constructor ///
     public EncryptionForm() {
@@ -27,6 +30,7 @@ public class EncryptionForm extends JPanel{
         inputPathTextField = new JTextField(15);
         outputPathTextField = new JTextField(15);
         myGridBagConstraints = new GridBagConstraints();
+        myFileChooser = new JFileChooser();
 
         /// set properties ///
         setVisible(true);
@@ -89,7 +93,36 @@ public class EncryptionForm extends JPanel{
 
     }
     private void setComponentBehaviour(){
-        
+        encryptButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+            }
+        });
+
+        decryptButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+            }
+        });
+
+        browseInputInputButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if (myFileChooser.showOpenDialog(EncryptionForm.this) == JFileChooser.APPROVE_OPTION) {
+                    String path = myFileChooser.getSelectedFile().toString();
+                }
+            }
+        });
+        browseOutputPathButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if (myFileChooser.showOpenDialog(EncryptionForm.this) == JFileChooser.APPROVE_OPTION) {
+                    String path = myFileChooser.getSelectedFile().toString();
+                }
+            }
+        });
+
     }
 
     private void setGrid(int row, int column) {
