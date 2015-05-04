@@ -4,6 +4,7 @@ import com.sun.org.apache.xalan.internal.xsltc.compiler.util.AttributeSetMethodG
 import sun.nio.cs.ext.EUC_CN;
 
 import javax.swing.*;
+import javax.swing.border.Border;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -15,6 +16,7 @@ public class EncryptionForm extends JPanel{
     private JTextField keyTextField , inputPathTextField , outputPathTextField;
     private GridBagConstraints myGridBagConstraints;
     private JFileChooser myFileChooser;
+    private Border innerBorder , outerBorder;
 
     /// Constructor ///
     public EncryptionForm() {
@@ -31,12 +33,16 @@ public class EncryptionForm extends JPanel{
         outputPathTextField = new JTextField(15);
         myGridBagConstraints = new GridBagConstraints();
         myFileChooser = new JFileChooser();
+        innerBorder = BorderFactory.createEtchedBorder();
+        outerBorder = BorderFactory.createEmptyBorder(5, 5, 5, 5);
+
 
         /// set properties ///
         setVisible(true);
         setLayout(new GridBagLayout());
         setComponentPosition();
         setComponentBehaviour();
+        setBorder(BorderFactory.createCompoundBorder(outerBorder, innerBorder));
 
     }
 
