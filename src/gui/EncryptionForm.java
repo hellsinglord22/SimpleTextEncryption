@@ -83,11 +83,11 @@ public class EncryptionForm extends JPanel{
 
         myGridBagConstraints.weighty = 3;
         /// Fourth line ///
-        myGridBagConstraints.anchor = GridBagConstraints.LINE_START;
+        myGridBagConstraints.anchor = GridBagConstraints.LINE_END;
         setGrid(3, 0);
         add(encryptButton, myGridBagConstraints);
 
-        setGrid(3, 2);
+        setGrid(3, 1);
         myGridBagConstraints.anchor = GridBagConstraints.LINE_END;
         add(decryptButton, myGridBagConstraints);
 

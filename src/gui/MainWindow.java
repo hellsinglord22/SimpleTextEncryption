@@ -36,7 +36,7 @@ public class MainWindow extends JFrame{
 
         /// setting properties ////
         setResizable(false);
-        setMinimumSize(new Dimension(500, 500));
+        setMinimumSize(new Dimension(400, 400));
         setVisible(true);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setJMenuBar(createMenuBar());
