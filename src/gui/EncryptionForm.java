@@ -1,7 +1,7 @@
 package gui;
 
-import com.sun.org.apache.xalan.internal.xsltc.compiler.util.AttributeSetMethodGenerator;
-import sun.nio.cs.ext.EUC_CN;
+import controller.CryptographicalBehaviour;
+import controller.ProgramLogic;
 
 import javax.swing.*;
 import javax.swing.border.Border;
@@ -17,6 +17,7 @@ public class EncryptionForm extends JPanel{
     private GridBagConstraints myGridBagConstraints;
     private JFileChooser myFileChooser;
     private Border innerBorder , outerBorder;
+    private CryptographicalBehaviour behaviour;
 
     /// Constructor ///
     public EncryptionForm() {
@@ -35,7 +36,6 @@ public class EncryptionForm extends JPanel{
         myFileChooser = new JFileChooser();
         innerBorder = BorderFactory.createEtchedBorder();
         outerBorder = BorderFactory.createEmptyBorder(5, 5, 5, 5);
-
 
         /// set properties ///
         setVisible(true);
@@ -102,13 +102,16 @@ public class EncryptionForm extends JPanel{
         encryptButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                behaviour.EncryptOrDecrypt(new CryptographicInfo(EncryptionForm.this, inputPathTextField.getText()
+                        , outputPathTextField.getText(), keyTextField.getText(), Order.encrypt));
             }
         });
 
         decryptButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-
+                behaviour.EncryptOrDecrypt((new CryptographicInfo(EncryptionForm.this, inputPathTextField.getText()
+                        , outputPathTextField.getText(), keyTextField.getText(), Order.decrypt)));
             }
         });
 
@@ -132,13 +135,13 @@ public class EncryptionForm extends JPanel{
         });
 
     }
-
     private void setGrid(int row, int column) {
         myGridBagConstraints.gridx = column;
         myGridBagConstraints.gridy = row;
     }
 
-
-
-
+    /*getters and setters*/
+    public void setBehaviour(CryptographicalBehaviour behaviour) {
+        this.behaviour = behaviour;
+    }
 }
