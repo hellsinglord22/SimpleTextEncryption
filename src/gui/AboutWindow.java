@@ -2,6 +2,7 @@ package gui;
 
 
 import javax.swing.*;
+import java.awt.*;
 
 public class AboutWindow extends JFrame {
 
@@ -10,8 +11,7 @@ public class AboutWindow extends JFrame {
         super(text);
 
         setVisible(true);
-        setSize(400, 400);
-
+        setMinimumSize(new Dimension(400, 400));
     }
 
 }
