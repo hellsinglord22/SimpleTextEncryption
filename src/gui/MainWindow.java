@@ -1,5 +1,8 @@
 package gui;
 
+
+import controller.ProgramLogic;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -10,6 +13,7 @@ public class MainWindow extends JFrame{
     private Container mainWindowContainer;
     private EncryptionForm mainWindowEncryptionForm;
     private JFileChooser mainWindowFileChooser;
+    private ProgramLogic mainWindowProgramLogic;
 
 
 
@@ -33,6 +37,7 @@ public class MainWindow extends JFrame{
         mainWindowContainer = getContentPane();
         mainWindowEncryptionForm = new EncryptionForm();
         mainWindowFileChooser = new JFileChooser();
+        mainWindowProgramLogic = new ProgramLogic();
 
         /// setting properties ////
         setResizable(false);
@@ -41,12 +46,13 @@ public class MainWindow extends JFrame{
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setJMenuBar(createMenuBar());
         setComponentPosition();
+        setComponentBehaviour();
 
     }
 
     /// Methods(s) ////
     private void setComponentBehaviour() {
-
+        mainWindowEncryptionForm.setBehaviour(mainWindowProgramLogic);
     }
     private void setComponentPosition() {
         mainWindowContainer.add(mainWindowEncryptionForm, BorderLayout.CENTER);
@@ -95,6 +101,7 @@ public class MainWindow extends JFrame{
                 }
             }
         });
+
 
         aboutItem.addActionListener(new ActionListener() {
             @Override
